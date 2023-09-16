@@ -12,7 +12,7 @@ hoverRectangle.addEventListener("mouseout", () => {
 });
 
 // Fetch data from killfeed.txt (you can replace this with your own data source)
-fetch("killfeed.txt")
+fetch("/killfeed.txt")
     .then(response => response.text())
     .then(data => {
         // Split the data into lines
