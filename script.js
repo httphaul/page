@@ -1,24 +1,22 @@
-const killfeed = document.getElementById("killfeed");
-const hoverRectangle = document.getElementById("hoverRectangle");
+const openDialogButton = document.getElementById("openDialogButton");
+const dialog = document.getElementById("dialog");
+const dialogContent = document.getElementById("dialogContent");
+const closeDialogButton = document.getElementById("closeDialogButton");
 
-// Show the killfeed and rectangle on hover
-hoverRectangle.addEventListener("mouseenter", () => {
-    killfeed.style.display = "block";
+openDialogButton.addEventListener("click", () => {
+    // Show the dialog box
+    dialog.style.display = "block";
+
+    // Load the text file's content
+    fetch("killfeed.txt") // Replace with your text file's path
+        .then(response => response.text())
+        .then(data => {
+            dialogContent.innerText = data;
+        })
+        .catch(error => console.error(error));
 });
 
-// Hide the killfeed and rectangle on mouseout
-hoverRectangle.addEventListener("mouseout", () => {
-    killfeed.style.display = "none";
+closeDialogButton.addEventListener("click", () => {
+    // Close the dialog box
+    dialog.style.display = "none";
 });
-
-// Fetch data from killfeed.txt (you can replace this with your own data source)
-fetch("/killfeed.txt")
-    .then(response => response.text())
-    .then(data => {
-        // Split the data into lines
-        const lines = data.split("\n");
-        
-        // Display the killfeed data
-        killfeed.innerHTML = lines.map(line => `<p>${line}</p>`).join("");
-    })
-    .catch(error => console.error(error));
