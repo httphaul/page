@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10000x.net</title>
+    <style>
+html {
+  background: url(/hm.jpg) no-repeat center center fixed;
+  background-size: contain;
+  background-position: center;
+  background-color:#000000;
+  padding: 10%; /* Adjust the padding as needed */
+  box-sizing: border-box; /* Include padding in the total width/height */
+}
 
+#killfeed {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    display: none;
+}
+
+#hoverRectangle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ccc;
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <div id="killfeed"></div>
+    <div id="hoverRectangle"></div>
+    <script src="script.js"></script>
+</body>
+</html>
